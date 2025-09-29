@@ -9,8 +9,6 @@ import (
 	"importer/customerimporter"
 )
 
-// TODO: add tests for a correct error logging
-
 func TestExportData(t *testing.T) {
 	// Sample data for testing
 	data := []customerimporter.DomainData{
@@ -61,4 +59,9 @@ func TestExportData(t *testing.T) {
 			t.Errorf("Expected file content:\n%s\nGot:\n%s", expected, got)
 		}
 	})
+}
+
+func TestProcessingData(t *testing.T) {
+	// TODO: extend this func to test also logging result
+	ProcessDomainData("./test", "")
 }
