@@ -2,11 +2,7 @@ package main
 
 import (
 	"flag"
-	"fmt"
-
-	"importer/customerimporter"
-	"importer/exporter"
-	"log/slog"
+	processor "importer/dataprocessor"
 )
 
 type Options struct {
@@ -24,25 +20,7 @@ func readOptions() *Options {
 
 func main() {
 	opts := readOptions()
-	importer := customerimporter.NewCustomerImporter(opts.path)
-	data, err := importer.ImportDomainData()
-	if err != nil {
-		slog.Error("error importing customer data: ", err)
-		return
-	}
-	if *opts.outFile == "" {
-		printData(data)
-	} else {
-		exporter := exporter.NewCustomerExporter(opts.outFile)
-		if saveErr := exporter.ExportData(data); saveErr != nil {
-			slog.Error("error saving domain data: ", saveErr)
-		}
-	}
+	// TODO: improve invalid usage
+	processor.ProcessDomainData(*opts.path, *opts.outFile)
 }
 
-func printData(data []customerimporter.DomainData) {
-	fmt.Println("domain,number_of_customers")
-	for _, v := range data {
-		fmt.Printf("%s,%v\n", v.Domain, v.CustomerQuantity)
-	}
-}

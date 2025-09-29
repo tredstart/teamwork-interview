@@ -70,3 +70,4 @@ func (ci CustomerImporter) ImportDomainData() ([]DomainData, error) {
 	})
 	return domainData, nil
 }
+
