@@ -11,6 +11,7 @@ import (
 	"encoding/csv"
 	"fmt"
 	"io"
+	"log/slog"
 	"os"
 	"slices"
 	"strings"
@@ -54,7 +55,7 @@ func (ci CustomerImporter) ImportDomainData() ([]DomainData, error) {
 		}
 		email, domain, found := strings.Cut(line[2], "@")
 		if email == "" || !found {
-			return nil, fmt.Errorf("error invalid email address: %s", line[2])
+			return nil, fmt.Errorf("invalid email address: %s", line[2])
 		}
 		data[domain] += 1
 	}
@@ -68,6 +69,7 @@ func (ci CustomerImporter) ImportDomainData() ([]DomainData, error) {
 	slices.SortFunc(domainData, func(l, r DomainData) int {
 		return cmp.Compare(l.Domain, r.Domain)
 	})
+
+	slog.Info("Import successful")
 	return domainData, nil
 }
-

@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"importer/customerimporter"
 	"io"
+	"log/slog"
 	"os"
 	"strconv"
 )
@@ -24,11 +25,11 @@ func NewCustomerExporter(outputPath *string) *CustomerExporter {
 // be truncated.
 func (ex CustomerExporter) ExportData(data []customerimporter.DomainData) error {
 	if data == nil {
-		return fmt.Errorf("error provided data is empty (nil)")
+		return fmt.Errorf("provided data is empty (nil)")
 	}
 	outputFile, err := os.Create(*ex.outputPath)
 	if err != nil {
-		return fmt.Errorf("error creating new file for saving: %v", err)
+		return fmt.Errorf("creating new file for saving: %v", err)
 	}
 	defer outputFile.Close()
 	return exportCsv(data, outputFile)
@@ -53,5 +54,6 @@ func exportCsv(data []customerimporter.DomainData, output io.Writer) error {
 			return err
 		}
 	}
+	slog.Info("Export successful.")
 	return nil
 }

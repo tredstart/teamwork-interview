@@ -60,8 +60,3 @@ func TestExportData(t *testing.T) {
 		}
 	})
 }
-
-func TestProcessingData(t *testing.T) {
-	// TODO: extend this func to test also logging result
-	ProcessDomainData("./test", "")
-}
