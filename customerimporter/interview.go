@@ -35,6 +35,7 @@ func NewCustomerImporter(filePath *string) *CustomerImporter {
 
 // ImportDomainData reads and returns sorted customer domain data from CSV file.
 func (ci CustomerImporter) ImportDomainData() ([]DomainData, error) {
+	slog.Info(fmt.Sprintf("starting import of %s", *ci.path))
 	file, err := os.Open(*ci.path)
 	if err != nil {
 		return nil, err
@@ -46,7 +47,7 @@ func (ci CustomerImporter) ImportDomainData() ([]DomainData, error) {
 	// skip first line with headers
 	line, readErr := csvReader.Read()
 	if readErr != nil {
-		fmt.Println(line, readErr)
+		slog.Warn("cannot read csv file", "importer", fmt.Sprint(line, readErr))
 		return nil, readErr
 	}
 	for line, readErr := csvReader.Read(); readErr != io.EOF; line, readErr = csvReader.Read() {
@@ -55,7 +56,8 @@ func (ci CustomerImporter) ImportDomainData() ([]DomainData, error) {
 		}
 		email, domain, found := strings.Cut(line[2], "@")
 		if email == "" || !found {
-			return nil, fmt.Errorf("invalid email address: %s", line[2])
+			slog.Warn("skipping line", "importer", fmt.Sprintf("invalid email address: %s", line[2]))
+			continue
 		}
 		data[domain] += 1
 	}
