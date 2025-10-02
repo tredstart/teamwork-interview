@@ -1,8 +1,10 @@
 package exporter
 
 import (
+	"bytes"
 	"fmt"
 	"importer/customerimporter"
+	"importer/logger"
 	"testing"
 )
 
@@ -71,6 +73,9 @@ func BenchmarkImportDomainData(b *testing.B) {
 		b.Error(err)
 	}
 	exporter := NewCustomerExporter(&path)
+
+	var buf bytes.Buffer
+	logger.SetupLogger(&buf, "warn")
 
 	b.StartTimer()
 	b.ReportAllocs()

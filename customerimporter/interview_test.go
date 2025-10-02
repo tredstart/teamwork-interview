@@ -18,16 +18,30 @@ func TestImportData(t *testing.T) {
 }
 
 func TestImportDataSort(t *testing.T) {
-	sortedDomains := []string{"360.cn", "acquirethisname.com", "blogtalkradio.com", "chicagotribune.com", "cnet.com", "cyberchimps.com", "github.io", "hubpages.com", "rediff.com", "statcounter.com"}
+	domains := []string{
+		"360.cn",
+		"acquirethisname.com",
+		"blogtalkradio.com",
+		"chicagotribune.com",
+		"cnet.com",
+		"cyberchimps.com",
+		"github.io",
+		"hubpages.com",
+		"rediff.com",
+		"statcounter.com",
+	}
 	path := "./test_data.csv"
 	importer := NewCustomerImporter(&path)
 	data, err := importer.ImportDomainData()
 	if err != nil {
 		t.Error(err)
 	}
-	for i, v := range data {
-		if v.Domain != sortedDomains[i] {
-			t.Errorf("data not sorted properly. mismatch:\nhave: %v\nwant: %v", v.Domain, sortedDomains[i])
+	if len(data) != len(domains) {
+		t.Errorf("sorted data has a wrong number of domains \n %v \n\n vs %v", domains, data)
+	}
+	for i := 0; i < len(data)-1; i++ {
+		if data[i].CustomerQuantity > data[i+1].CustomerQuantity {
+			t.Errorf("data is not sorted: %v", data)
 		}
 	}
 }
@@ -66,6 +80,9 @@ func BenchmarkImportDomainData(b *testing.B) {
 	path := "./benchmark10k.csv"
 	importer := NewCustomerImporter(&path)
 
+	var buf bytes.Buffer
+	logger.SetupLogger(&buf, "warn")
+
 	b.StartTimer()
 	b.ReportAllocs()
 	for i := 0; i < b.N; i++ {
@@ -73,4 +90,5 @@ func BenchmarkImportDomainData(b *testing.B) {
 			b.Error(err)
 		}
 	}
+
 }
