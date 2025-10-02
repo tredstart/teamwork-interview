@@ -1,0 +1,208 @@
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO Export successful.
+2025/10/02 13:18:29 INFO starting import of ../customerimporter/benchmark10k.csv
+2025/10/02 13:18:29 INFO Import successful
+goos: linux
+goarch: amd64
+pkg: importer/exporter
+cpu: AMD Ryzen 5 5600H with Radeon Graphics         
+BenchmarkImportDomainData-12    	   18374	     64679 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   18559	     64770 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   10000	    183325 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27859	     42642 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27912	     42707 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27963	     43523 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27050	     43593 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27896	     43089 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27634	     43085 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   26930	     43244 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27574	     43369 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27813	     43185 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27663	     44024 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27778	     43489 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27651	     43501 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27703	     45073 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27470	     43256 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27690	     43549 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27793	     43715 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27554	     43601 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27469	     43219 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27672	     44081 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27322	     43312 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27681	     43496 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27543	     43662 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   26598	     43670 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27388	     43507 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27705	     43293 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27219	     43910 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27631	     43500 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   26925	     43566 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27562	     44172 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27795	     43510 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27511	     43676 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27769	     44141 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27668	     43603 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27249	     43286 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27308	     43897 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27561	     43586 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27429	     43528 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27550	     43992 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27412	     43794 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27648	     43471 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27249	     43309 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   26528	     43427 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27307	     43154 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27482	     43494 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27499	     43806 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27613	     43688 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27666	     43623 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27420	     43881 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27688	     43524 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27618	     43811 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27742	     43910 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27748	     43555 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27805	     43540 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27750	     43669 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27585	     43270 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27591	     43587 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27514	     43582 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   26655	     43388 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27752	     43284 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27610	     43665 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27405	     43780 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27854	     43268 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27512	     43055 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27534	     43923 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27780	     43466 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27418	     43140 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27796	     43604 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27517	     43225 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27813	     43493 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27488	     43880 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27680	     43458 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27535	     43389 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27656	     43458 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27204	     43470 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27351	     43490 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27624	     43458 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   26781	     43334 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27640	     43305 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27721	     43283 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27668	     43709 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27543	     43454 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27405	     43412 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27487	     43864 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27577	     43844 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27654	     43494 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27723	     43518 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27606	     43595 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27488	     43434 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27476	     44224 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27558	     43616 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27332	     43299 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27952	     43618 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27066	     43289 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27548	     43132 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27706	     43359 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27060	     43399 ns/op	   36368 B/op	      14 allocs/op
+BenchmarkImportDomainData-12    	   27457	     43464 ns/op	   36368 B/op	      14 allocs/op
+PASS
+ok  	importer/exporter	165.663s

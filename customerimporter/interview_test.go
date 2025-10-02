@@ -32,16 +32,17 @@ func TestImportDataSort(t *testing.T) {
 	}
 	path := "./test_data.csv"
 	importer := NewCustomerImporter(&path)
-	data, err := importer.ImportDomainData()
+	dataTree, err := importer.ImportDomainData()
 	if err != nil {
 		t.Error(err)
 	}
+	data := dataTree.Slice()
 	if len(data) != len(domains) {
-		t.Errorf("sorted data has a wrong number of domains \n %v \n\n vs %v", domains, data)
+		t.Errorf("sorted data has a wrong number of domains \n %v \n\n vs %v\n", domains, data)
 	}
 	for i := 0; i < len(data)-1; i++ {
 		if data[i].CustomerQuantity > data[i+1].CustomerQuantity {
-			t.Errorf("data is not sorted: %v", data)
+			t.Errorf("data is not sorted: %v\n", data)
 		}
 	}
 }

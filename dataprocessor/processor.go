@@ -14,7 +14,7 @@ func ProcessDomainData(path, outFile string) {
 		slog.Error("error importing customer data", "importer", err)
 		return
 	}
-	ExportData(data, outFile)
+	ExportData(data.Slice(), outFile)
 }
 
 func ExportData(data []customerimporter.DomainData, outFile string) {

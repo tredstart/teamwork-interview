@@ -80,7 +80,7 @@ func BenchmarkImportDomainData(b *testing.B) {
 	b.StartTimer()
 	b.ReportAllocs()
 	for i := 0; i < b.N; i++ {
-		if err := exporter.ExportData(data); err != nil {
+		if err := exporter.ExportData(data.Slice()); err != nil {
 			b.Fatal(err)
 		}
 	}

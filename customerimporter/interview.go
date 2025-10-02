@@ -12,13 +12,65 @@ import (
 	"io"
 	"log/slog"
 	"os"
-	"slices"
 	"strings"
 )
 
 type DomainData struct {
 	Domain           string
 	CustomerQuantity uint64
+}
+
+type DomainDataNode struct {
+	DomainData
+	ParentNode *DomainDataNode
+	LeftNode   *DomainDataNode
+	RightNode  *DomainDataNode
+}
+
+type DomainDataTree struct {
+	Root *DomainDataNode
+}
+
+func appendNode(node, newNode *DomainDataNode) {
+	if newNode.CustomerQuantity <= node.CustomerQuantity {
+		if node.LeftNode == nil {
+			newNode.ParentNode = node
+			node.LeftNode = newNode
+			return
+		}
+		appendNode(node.LeftNode, newNode)
+	} else {
+		if node.RightNode == nil {
+			newNode.ParentNode = node
+			node.RightNode = newNode
+			return
+		}
+		appendNode(node.RightNode, newNode)
+	}
+}
+
+func (dt *DomainDataTree) Append(node *DomainDataNode) {
+	if dt.Root == nil {
+		dt.Root = node
+		return
+	}
+	appendNode(dt.Root, node)
+}
+
+func walk(node *DomainDataNode, data *[]DomainData) {
+	if node == nil {
+		return
+	}
+
+	walk(node.LeftNode, data)
+	*data = append(*data, node.DomainData)
+	walk(node.RightNode, data)
+}
+
+func (dt DomainDataTree) Slice() []DomainData {
+	data := []DomainData{}
+	walk(dt.Root, &data)
+	return data
 }
 
 type CustomerImporter struct {
@@ -33,7 +85,7 @@ func NewCustomerImporter(filePath *string) *CustomerImporter {
 }
 
 // ImportDomainData reads and returns sorted customer domain data from CSV file.
-func (ci CustomerImporter) ImportDomainData() ([]DomainData, error) {
+func (ci CustomerImporter) ImportDomainData() (*DomainDataTree, error) {
 	slog.Info(fmt.Sprintf("starting import of %s", *ci.path))
 	file, err := os.Open(*ci.path)
 	if err != nil {
@@ -60,20 +112,13 @@ func (ci CustomerImporter) ImportDomainData() ([]DomainData, error) {
 		}
 		data[domain] += 1
 	}
-	domainData := make([]DomainData, 0, len(data))
+	domainData := new(DomainDataTree)
 	for k, v := range data {
-		domainData = append(domainData, DomainData{
-			Domain:           k,
-			CustomerQuantity: v,
-		})
+		dataNode := new(DomainDataNode)
+		dataNode.Domain = k
+		dataNode.CustomerQuantity = v
+		domainData.Append(dataNode)
 	}
-	slices.SortFunc(domainData, func(l, r DomainData) int {
-		if l.CustomerQuantity <= r.CustomerQuantity {
-			return -1
-		} else {
-			return +1
-		}
-	})
 
 	slog.Info("Import successful")
 	return domainData, nil
