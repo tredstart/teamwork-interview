@@ -1,6 +1,11 @@
 package customerimporter
 
-import "testing"
+import (
+	"bytes"
+	"importer/logger"
+	"strings"
+	"testing"
+)
 
 func TestImportData(t *testing.T) {
 	path := "./test_data.csv"
@@ -41,10 +46,19 @@ func TestImportInvalidData(t *testing.T) {
 	path := "./test_invalid_data.csv"
 	importer := NewCustomerImporter(&path)
 
+	var buf bytes.Buffer
+
+	logger.SetupLogger(&buf, "warn")
+
 	_, err := importer.ImportDomainData()
-	if err == nil {
-		t.Error("invalid data not caught")
+	if err != nil {
+		t.Errorf("unexpected fail: %s", err)
 	}
+
+	if !strings.Contains(buf.String(), "invalid email") {
+		t.Error("invalid data isn't caught")
+	}
+
 }
 
 func BenchmarkImportDomainData(b *testing.B) {
