@@ -1,0 +1,111 @@
+2025/10/02 14:13:25 INFO starting import of ./test_data.csv
+2025/10/02 14:13:25 INFO Import successful
+2025/10/02 14:13:25 INFO starting import of ./test_data.csv
+2025/10/02 14:13:25 INFO Import successful
+2025/10/02 14:13:25 INFO starting import of 
+goos: linux
+goarch: amd64
+pkg: importer/customerimporter
+cpu: AMD Ryzen 5 5600H with Radeon Graphics         
+BenchmarkImportDomainData-12    	     384	   3082269 ns/op	 1465001 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     382	   3066976 ns/op	 1465017 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     386	   3090118 ns/op	 1465028 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     380	   3091040 ns/op	 1465019 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     393	   3101390 ns/op	 1465018 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     382	   3088971 ns/op	 1465014 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     390	   3076661 ns/op	 1465006 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     391	   3075649 ns/op	 1465004 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     392	   2933547 ns/op	 1465005 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     468	   2264830 ns/op	 1465009 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     536	   2233099 ns/op	 1465016 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     538	   2252419 ns/op	 1465007 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     531	   2253087 ns/op	 1465011 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     526	   2252399 ns/op	 1465009 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     528	   2270550 ns/op	 1465015 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     530	   2244065 ns/op	 1465017 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     530	   2254312 ns/op	 1465013 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     532	   2287955 ns/op	 1465024 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     538	   2250673 ns/op	 1465014 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     520	   2213639 ns/op	 1465023 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     536	   2277901 ns/op	 1465011 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     535	   2269283 ns/op	 1465011 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     536	   2260032 ns/op	 1465007 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     522	   2234211 ns/op	 1465016 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     535	   2284775 ns/op	 1465013 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     541	   2238529 ns/op	 1465018 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     535	   2244802 ns/op	 1465015 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     518	   2288807 ns/op	 1465006 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     532	   2254546 ns/op	 1465021 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     543	   2249189 ns/op	 1465021 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     534	   2249073 ns/op	 1465017 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     528	   2263382 ns/op	 1465016 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     524	   2256779 ns/op	 1465011 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     534	   2271038 ns/op	 1465030 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     518	   2231618 ns/op	 1465018 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     524	   2267557 ns/op	 1465009 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     524	   2255222 ns/op	 1465014 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     531	   2248986 ns/op	 1465007 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     512	   2334931 ns/op	 1465015 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     511	   2246811 ns/op	 1465015 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     534	   2237309 ns/op	 1465011 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     541	   2273571 ns/op	 1465017 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     532	   2264498 ns/op	 1465018 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     540	   2274264 ns/op	 1465021 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     536	   2247595 ns/op	 1465017 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     517	   2247900 ns/op	 1465019 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     519	   2296019 ns/op	 1465017 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     530	   2265788 ns/op	 1465025 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     524	   2254960 ns/op	 1465030 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     522	   2245205 ns/op	 1465015 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     526	   2478269 ns/op	 1465009 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     478	   2414761 ns/op	 1465000 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     483	   2617127 ns/op	 1465016 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     492	   2317198 ns/op	 1465002 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     499	   2423631 ns/op	 1465002 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     502	   2363437 ns/op	 1464999 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     505	   2335766 ns/op	 1464998 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     514	   2340760 ns/op	 1465001 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     518	   2412696 ns/op	 1464996 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     499	   2390871 ns/op	 1464996 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     484	   2421399 ns/op	 1464998 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     482	   2394509 ns/op	 1465002 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     471	   2465260 ns/op	 1464999 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     488	   2419336 ns/op	 1465001 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     499	   2355694 ns/op	 1464998 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     501	   2413790 ns/op	 1465006 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     518	   2355594 ns/op	 1465002 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     500	   2348815 ns/op	 1464996 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     512	   2350181 ns/op	 1465005 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     516	   2386668 ns/op	 1464995 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     494	   2334917 ns/op	 1464992 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     501	   2294985 ns/op	 1464998 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     506	   2354887 ns/op	 1465005 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     517	   2349873 ns/op	 1465000 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     505	   2353274 ns/op	 1465006 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     522	   2303737 ns/op	 1465001 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     511	   2426758 ns/op	 1464992 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     475	   2398903 ns/op	 1464997 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     505	   2337450 ns/op	 1465010 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     513	   2378712 ns/op	 1465004 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     466	   2655711 ns/op	 1464995 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     466	   2530273 ns/op	 1465006 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     465	   2596200 ns/op	 1465014 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     459	   2581208 ns/op	 1464997 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     457	   2521914 ns/op	 1465002 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     504	   2501694 ns/op	 1464994 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     466	   2450936 ns/op	 1465003 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     522	   2341290 ns/op	 1465014 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     508	   2277342 ns/op	 1465017 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     531	   2247688 ns/op	 1465020 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     530	   2268899 ns/op	 1465021 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     536	   2281250 ns/op	 1465008 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     522	   2283147 ns/op	 1465008 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     510	   2246341 ns/op	 1465007 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     534	   2284058 ns/op	 1465026 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     530	   2280868 ns/op	 1465016 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     518	   2262741 ns/op	 1465014 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     534	   2290873 ns/op	 1465019 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     530	   2274569 ns/op	 1465019 B/op	   20038 allocs/op
+BenchmarkImportDomainData-12    	     519	   2256536 ns/op	 1465020 B/op	   20038 allocs/op
+PASS
+ok  	importer/customerimporter	143.713s

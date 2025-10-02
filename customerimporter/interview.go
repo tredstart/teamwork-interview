@@ -7,7 +7,6 @@
 package customerimporter
 
 import (
-	"cmp"
 	"encoding/csv"
 	"fmt"
 	"io"
@@ -69,7 +68,11 @@ func (ci CustomerImporter) ImportDomainData() ([]DomainData, error) {
 		})
 	}
 	slices.SortFunc(domainData, func(l, r DomainData) int {
-		return cmp.Compare(l.Domain, r.Domain)
+		if l.CustomerQuantity <= r.CustomerQuantity {
+			return -1
+		} else {
+			return +1
+		}
 	})
 
 	slog.Info("Import successful")
