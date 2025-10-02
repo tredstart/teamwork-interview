@@ -2,6 +2,7 @@ package customerimporter
 
 import (
 	"bytes"
+	"container/heap"
 	"importer/logger"
 	"strings"
 	"testing"
@@ -32,17 +33,20 @@ func TestImportDataSort(t *testing.T) {
 	}
 	path := "./test_data.csv"
 	importer := NewCustomerImporter(&path)
-	dataTree, err := importer.ImportDomainData()
+	data, err := importer.ImportDomainData()
 	if err != nil {
 		t.Error(err)
 	}
-	data := dataTree.Slice()
 	if len(data) != len(domains) {
 		t.Errorf("sorted data has a wrong number of domains \n %v \n\n vs %v\n", domains, data)
 	}
+	output := make([]uint64, len(data))
+	for len(data) > 0 {
+		output = append(output, heap.Pop(&data).(*DomainData).CustomerQuantity)
+	}
 	for i := 0; i < len(data)-1; i++ {
 		if data[i].CustomerQuantity > data[i+1].CustomerQuantity {
-			t.Errorf("data is not sorted: %v\n", data)
+			t.Errorf("data is not sorted: %v", data)
 		}
 	}
 }

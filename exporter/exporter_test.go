@@ -2,6 +2,7 @@ package exporter
 
 import (
 	"bytes"
+	"container/heap"
 	"fmt"
 	"importer/customerimporter"
 	"importer/logger"
@@ -10,28 +11,29 @@ import (
 
 func TestExportData(t *testing.T) {
 	path := "./test_output.csv"
-	data := []customerimporter.DomainData{
-		{
+	data := customerimporter.PriorityQueue{
+		&customerimporter.DomainData{
 			Domain:           "livejournal.com",
 			CustomerQuantity: 12,
 		},
-		{
+		&customerimporter.DomainData{
 			Domain:           "microsoft.com",
 			CustomerQuantity: 22,
 		},
-		{
+		&customerimporter.DomainData{
 			Domain:           "newsvine.com",
 			CustomerQuantity: 15,
 		},
-		{
+		&customerimporter.DomainData{
 			Domain:           "pinteres.uk",
 			CustomerQuantity: 10,
 		},
-		{
+		&customerimporter.DomainData{
 			Domain:           "yandex.ru",
 			CustomerQuantity: 43,
 		},
 	}
+	heap.Init(&data)
 	exporter := NewCustomerExporter(&path)
 
 	err := exporter.ExportData(data)
@@ -44,7 +46,7 @@ func TestExportInvalidPath(t *testing.T) {
 	path := ""
 	exporter := NewCustomerExporter(&path)
 
-	err := exporter.ExportData([]customerimporter.DomainData{})
+	err := exporter.ExportData(customerimporter.PriorityQueue{})
 	if err == nil {
 		t.Fatal(err)
 	}
@@ -55,14 +57,14 @@ func TestExportEmptyData(t *testing.T) {
 	path := "./test_output.csv"
 	exporter := NewCustomerExporter(&path)
 
-	err := exporter.ExportData(nil)
+	err := exporter.ExportData(customerimporter.PriorityQueue(nil))
 	if err == nil {
 		t.Fatal(err)
 	}
 	t.Log(err)
 }
 
-func BenchmarkImportDomainData(b *testing.B) {
+func BenchmarkExportDomainData(b *testing.B) {
 	b.StopTimer()
 	dir := b.TempDir()
 	path := fmt.Sprintf("%s/test_output.csv", dir)
@@ -80,7 +82,7 @@ func BenchmarkImportDomainData(b *testing.B) {
 	b.StartTimer()
 	b.ReportAllocs()
 	for i := 0; i < b.N; i++ {
-		if err := exporter.ExportData(data.Slice()); err != nil {
+		if err := exporter.ExportData(data); err != nil {
 			b.Fatal(err)
 		}
 	}

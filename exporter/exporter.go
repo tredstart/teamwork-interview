@@ -1,6 +1,7 @@
 package exporter
 
 import (
+	"container/heap"
 	"encoding/csv"
 	"fmt"
 	"importer/customerimporter"
@@ -23,7 +24,7 @@ func NewCustomerExporter(outputPath *string) *CustomerExporter {
 
 // ExportData writes sorted customer domain data to a CSV file. If file already exists, it will
 // be truncated.
-func (ex CustomerExporter) ExportData(data []customerimporter.DomainData) error {
+func (ex CustomerExporter) ExportData(data customerimporter.PriorityQueue) error {
 	if data == nil {
 		return fmt.Errorf("provided data is empty (nil)")
 	}
@@ -35,7 +36,7 @@ func (ex CustomerExporter) ExportData(data []customerimporter.DomainData) error 
 	return exportCsv(data, outputFile)
 }
 
-func exportCsv(data []customerimporter.DomainData, output io.Writer) error {
+func exportCsv(data customerimporter.PriorityQueue, output io.Writer) error {
 	headers := []string{"domain", "number_of_customers"}
 	csvWriter := csv.NewWriter(output)
 	defer func() error {
@@ -48,7 +49,9 @@ func exportCsv(data []customerimporter.DomainData, output io.Writer) error {
 	if err := csvWriter.Write(headers); err != nil {
 		return err
 	}
-	for _, v := range data {
+
+	for len(data) > 0 {
+		v := heap.Pop(&data).(*customerimporter.DomainData)
 		pair := []string{v.Domain, strconv.FormatUint(v.CustomerQuantity, 10)}
 		if err := csvWriter.Write(pair); err != nil {
 			return err

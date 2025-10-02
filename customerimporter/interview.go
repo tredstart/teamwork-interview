@@ -1,12 +1,7 @@
-// Package customerimporter reads from a CSV file and returns a sorted (data
-// structure of your choice) of email domains along with the number of customers
-// with e-mail addresses for each domain. This should be able to be ran from the
-// CLI and output the sorted domains to the terminal or to a file. Any errors
-// should be logged (or handled). Performance matters (this is only ~3k lines,
-// but could be 1m lines or run on a small machine).
 package customerimporter
 
 import (
+	"container/heap"
 	"encoding/csv"
 	"fmt"
 	"io"
@@ -15,62 +10,48 @@ import (
 	"strings"
 )
 
+type PriorityQueue []*DomainData
+
+func (pq PriorityQueue) Len() int { return len(pq) }
+
+func (pq PriorityQueue) Less(i, j int) bool {
+	return pq[i].CustomerQuantity <= pq[j].CustomerQuantity
+}
+
+func (pq PriorityQueue) Swap(i, j int) {
+	pq[i], pq[j] = pq[j], pq[i]
+	pq[i].Index = i
+	pq[j].Index = j
+}
+
+func (pq *PriorityQueue) Push(x any) {
+	n := len(*pq)
+	item := x.(*DomainData)
+	item.Index = n
+	*pq = append(*pq, item)
+}
+
+func (pq *PriorityQueue) Pop() any {
+	old := *pq
+	n := len(old)
+	item := old[n-1]
+	old[n-1] = nil  // don't stop the GC from reclaiming the item eventually
+	item.Index = -1 // for safety
+	*pq = old[0 : n-1]
+	return item
+}
+
+// update modifies the priority and value of an Item in the queue.
+func (pq *PriorityQueue) update(item *DomainData, domain string, quantity uint64) {
+	item.Domain = domain
+	item.CustomerQuantity = quantity
+	heap.Fix(pq, item.Index)
+}
+
 type DomainData struct {
 	Domain           string
 	CustomerQuantity uint64
-}
-
-type DomainDataNode struct {
-	DomainData
-	ParentNode *DomainDataNode
-	LeftNode   *DomainDataNode
-	RightNode  *DomainDataNode
-}
-
-type DomainDataTree struct {
-	Root *DomainDataNode
-}
-
-func appendNode(node, newNode *DomainDataNode) {
-	if newNode.CustomerQuantity <= node.CustomerQuantity {
-		if node.LeftNode == nil {
-			newNode.ParentNode = node
-			node.LeftNode = newNode
-			return
-		}
-		appendNode(node.LeftNode, newNode)
-	} else {
-		if node.RightNode == nil {
-			newNode.ParentNode = node
-			node.RightNode = newNode
-			return
-		}
-		appendNode(node.RightNode, newNode)
-	}
-}
-
-func (dt *DomainDataTree) Append(node *DomainDataNode) {
-	if dt.Root == nil {
-		dt.Root = node
-		return
-	}
-	appendNode(dt.Root, node)
-}
-
-func walk(node *DomainDataNode, data *[]DomainData) {
-	if node == nil {
-		return
-	}
-
-	walk(node.LeftNode, data)
-	*data = append(*data, node.DomainData)
-	walk(node.RightNode, data)
-}
-
-func (dt DomainDataTree) Slice() []DomainData {
-	data := []DomainData{}
-	walk(dt.Root, &data)
-	return data
+	Index            int
 }
 
 type CustomerImporter struct {
@@ -85,7 +66,7 @@ func NewCustomerImporter(filePath *string) *CustomerImporter {
 }
 
 // ImportDomainData reads and returns sorted customer domain data from CSV file.
-func (ci CustomerImporter) ImportDomainData() (*DomainDataTree, error) {
+func (ci CustomerImporter) ImportDomainData() (PriorityQueue, error) {
 	slog.Info(fmt.Sprintf("starting import of %s", *ci.path))
 	file, err := os.Open(*ci.path)
 	if err != nil {
@@ -112,13 +93,18 @@ func (ci CustomerImporter) ImportDomainData() (*DomainDataTree, error) {
 		}
 		data[domain] += 1
 	}
-	domainData := new(DomainDataTree)
+	domainData := make(PriorityQueue, len(data))
+	i := 0
 	for k, v := range data {
-		dataNode := new(DomainDataNode)
-		dataNode.Domain = k
-		dataNode.CustomerQuantity = v
-		domainData.Append(dataNode)
+		item := &DomainData{
+			Domain:           k,
+			CustomerQuantity: v,
+			Index:            i,
+		}
+		domainData[i] = item
+		i++
 	}
+	heap.Init(&domainData)
 
 	slog.Info("Import successful")
 	return domainData, nil

@@ -1,6 +1,7 @@
 package dataprocessor
 
 import (
+	"container/heap"
 	"fmt"
 	"importer/customerimporter"
 	"importer/exporter"
@@ -14,10 +15,10 @@ func ProcessDomainData(path, outFile string) {
 		slog.Error("error importing customer data", "importer", err)
 		return
 	}
-	ExportData(data.Slice(), outFile)
+	ExportData(data, outFile)
 }
 
-func ExportData(data []customerimporter.DomainData, outFile string) {
+func ExportData(data customerimporter.PriorityQueue, outFile string) {
 	slog.Debug("Trying to export data...")
 	if outFile == "" {
 		printData(data)
@@ -29,10 +30,11 @@ func ExportData(data []customerimporter.DomainData, outFile string) {
 	}
 }
 
-func printData(data []customerimporter.DomainData) {
+func printData(data customerimporter.PriorityQueue) {
 	slog.Info("Printing data to the stdout.")
 	fmt.Println("domain,number_of_customers")
-	for _, v := range data {
+	for len(data) > 0 {
+		v := heap.Pop(&data).(*customerimporter.DomainData)
 		fmt.Printf("%s,%v\n", v.Domain, v.CustomerQuantity)
 	}
 }
